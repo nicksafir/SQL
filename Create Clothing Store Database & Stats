@@ -1,0 +1,31 @@
+-- Create a clothing store database
+
+CREATE TABLE ns_clothes(
+ID INTEGER PRIMARY KEY,
+gender TEXT,
+cut TEXT,
+color TEXT,
+price INTEGER,
+sale INTEGER
+);
+INSERT INTO ns_clothes values (1,"M","Boot","Black",20.00,10);
+INSERT INTO ns_clothes values (2,"M","Boot","Blue",20.00,10);
+INSERT INTO ns_clothes values (3,"M","Boot","Grey",20.00,10);
+INSERT INTO ns_clothes values (4,"M","Slim","Black",25.00,10);
+INSERT INTO ns_clothes values (5,"M","Slim","Blue",25.00,10);
+INSERT INTO ns_clothes values (6,"M","Slim","Grey",25.00,10);
+INSERT INTO ns_clothes values (7,"M","Skinny","Black",30.00,20);
+INSERT INTO ns_clothes values (8,"M","Skinny","Blue",30.00,20);
+INSERT INTO ns_clothes values (9,"M","Skinny","Grey",30.00,20);
+INSERT INTO ns_clothes values (10,"W","HiRise","Black",35.00,15);
+INSERT INTO ns_clothes values (11,"W","HiRise","Blue",35.00,15);
+INSERT INTO ns_clothes values (12,"W","HiRise","Grey",35.00,15);
+INSERT INTO ns_clothes values (13,"W","Mom","Black",35.00,20);
+INSERT INTO ns_clothes values (14,"W","Mom","Blue",35.00,20);
+INSERT INTO ns_clothes values (15,"W","Mom","Grey",35.00,20);
+
+-- Display jeans ordered by price.
+SELECT * FROM ns_clothes ORDER BY price;
+
+-- Display jeans ordered by cut.
+SELECT cut FROM ns_clothes GROUP BY cut;
