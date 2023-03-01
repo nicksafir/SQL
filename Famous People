@@ -1,0 +1,49 @@
+## In this project, you’re going to make your own table with some small set of “famous people”
+## Then make more tables about things they do and join those to create nice human readable lists.
+
+CREATE TABLE famous_people (id INTEGER, name TEXT, age INTEGER);
+INSERT into famous_people(id,name,age)
+values
+(1,'Scarlett Johansson', 38),
+(2,'Robert Downey', 57),
+(3, 'Lionel Messi',35),
+(4, 'Lebron James',38),
+(5, 'Joe Biden', 80),
+(6, 'Donald Trump',76),
+(7, 'Drake', 36),
+(8, 'Beyonce', 41);
+
+CREATE TABLE career (id INTEGER, name TEXT, category TEXT);
+INSERT INTO career(id,name,category)
+values
+(1,'Actor','Movie Star'),
+(2,'Actor', 'Movie Star'),
+(3, 'Athlete','Soccer'),
+(4, 'Athlete','Basketball'),
+(5, 'Politician', 'President'),
+(6, 'Politician', 'Former President'),
+(7, 'Artist', 'Rapper'),
+(8, 'Artist', 'Singer');
+
+CREATE TABLE awards (id INTEGER, awards_won INTEGER);
+INSERT INTO awards(id,awards_won)
+values
+(1, 36),
+(2, 44),
+(3, 60),
+(4, 113),
+(5, 16),
+(6, 28),
+(7, 136),
+(8, 41);
+
+SELECT * FROM famous_people
+JOIN career on famous_people.id=career.id
+JOIN awards on famous_people.id=awards.id
+ORDER BY name DESC;
+
+SELECT famous_people.name,career.category, awards.awards_won
+FROM famous_people
+JOIN career on famous_people.id=career.id
+JOIN awards on famous_people.id=awards.id
+ORDER BY awards_won DESC;
